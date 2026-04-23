@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "name": "change_guard_profile",
+      "config": "orion/profiles/change_guard_profile.json",
+      "availability": {
+        "global": true,
+        "auto_activation": false,
+        "default_mode": "command_triggered_only",
+        "module_family": "scoped_change_control",
+        "historical_label": "batch1"
+      },
+      "activation": {
+        "default": "disabled",
+        "command_triggered": true,
+        "pilot_session_enabled": false,
+        "protected_branch_default": false
+      },
+      "activation_source_of_truth": "repo_flags",
+      "pilot_repos": [
+        "paid_media_reports"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "change_guard_profile",
+  "version": "v1",
+  "status": "draft",
+  "enabled_by_default": false,
+  "scope": "batch1",
+  "composition": {
+    "atomic": true,
+    "policies": [
+      "command_safety_gate",
+      "edit_scope_boundary"
+    ]
+  },
+  "state_contract": {
+    "fields": [
+      "profile",
+      "active",
+      "session_id",
+      "boundary_root",
+      "rules",
+      "override_policy"
+    ],
+    "boundary_root_optional": true
+  },
+  "authority": {
+    "kernel_precedence": "preserved",
+    "override_policy": "kernel_controlled"
+  }
+}

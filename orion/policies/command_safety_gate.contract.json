@@ -1,0 +1,49 @@
+{
+  "name": "command_safety_gate",
+  "version": "v1",
+  "status": "draft",
+  "enabled_by_default": false,
+  "component_type": "policy",
+  "scope": "batch1",
+  "input_contract": {
+    "required": [
+      "request_id",
+      "session_id",
+      "repo",
+      "branch",
+      "actor",
+      "command",
+      "context"
+    ]
+  },
+  "output_contract": {
+    "decision_values": ["allow", "confirm_required", "deny"],
+    "risk_classes": [
+      "none",
+      "destructive_fs",
+      "destructive_db",
+      "history_rewrite",
+      "infra_destructive",
+      "unknown_high_risk"
+    ],
+    "fields": [
+      "component",
+      "decision",
+      "risk_class",
+      "confidence",
+      "reason",
+      "override_allowed",
+      "evidence",
+      "ttl_seconds"
+    ]
+  },
+  "required_behavior": [
+    "known_destructive_patterns_confirm_or_deny",
+    "suspicious_parse_failure_denies",
+    "empty_or_noop_allows"
+  ],
+  "authority": {
+    "kernel_precedence": "preserved",
+    "project_overrides": "tighten_only"
+  }
+}

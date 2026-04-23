@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "batch1": {
+    "pilot_repo": "paid_media_reports",
+    "status": "stable_controlled",
+    "integration_mode": "global_available_manual_activation_only",
+    "activation_guard": "repo_flags_required",
+    "auto_activation": false,
+    "policies": [
+      {
+        "name": "command_safety_gate",
+        "contract": "orion/policies/command_safety_gate.contract.json",
+        "enabled": false
+      },
+      {
+        "name": "edit_scope_boundary",
+        "contract": "orion/policies/edit_scope_boundary.contract.json",
+        "enabled": false
+      }
+    ],
+    "conflict_check": {
+      "kernel_precedence": "preserved",
+      "workflow_conflicts_detected": false
+    },
+    "canonical_name": "scoped_change_control",
+    "historical_label": "batch1"
+  }
+}

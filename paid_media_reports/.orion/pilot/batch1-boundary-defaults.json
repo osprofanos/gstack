@@ -1,0 +1,20 @@
+{
+  "repo": "paid_media_reports",
+  "boundary_presets_status": "unverified",
+  "use_presets_by_default": false,
+  "boundary_presets": [
+    {
+      "name": "reports_module",
+      "path": "./reports/"
+    },
+    {
+      "name": "etl_module",
+      "path": "./etl/"
+    },
+    {
+      "name": "tests_only",
+      "path": "./test/"
+    }
+  ],
+  "notes": "Use command-triggered boundary selection per session; no default hard lock and no preset auto-apply."
+}

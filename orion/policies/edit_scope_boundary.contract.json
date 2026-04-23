@@ -1,0 +1,43 @@
+{
+  "name": "edit_scope_boundary",
+  "version": "v1",
+  "status": "draft",
+  "enabled_by_default": false,
+  "component_type": "policy",
+  "scope": "batch1",
+  "input_contract": {
+    "required": [
+      "request_id",
+      "session_id",
+      "operation",
+      "target_path",
+      "context"
+    ]
+  },
+  "output_contract": {
+    "decision_values": ["allow", "deny"],
+    "reason_values": [
+      "inside_boundary",
+      "outside_boundary",
+      "no_boundary",
+      "path_unresolvable"
+    ],
+    "fields": [
+      "component",
+      "decision",
+      "normalized_target",
+      "normalized_boundary",
+      "reason",
+      "override_allowed"
+    ]
+  },
+  "required_behavior": [
+    "active_boundary_unresolved_path_denies",
+    "active_boundary_outside_target_denies",
+    "no_active_boundary_allows_unless_stricter_override"
+  ],
+  "authority": {
+    "kernel_precedence": "preserved",
+    "project_overrides": "tighten_only"
+  }
+}
