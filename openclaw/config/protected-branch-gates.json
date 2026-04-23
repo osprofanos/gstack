@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "global_defaults": {
+    "batch1_auto_activation": false,
+    "module_family": "scoped_change_control",
+    "historical_label": "batch1"
+  },
+  "repos": {
+    "paid_media_reports": {
+      "protected_branches": [
+        "main"
+      ],
+      "batch1": {
+        "enabled": false,
+        "command_safety_gate": false,
+        "edit_scope_boundary": false,
+        "change_guard_profile_default": false
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "repo": "paid_media_reports",
+  "batch": "batch1",
+  "modes": {
+    "disabled": false,
+    "command_triggered": true,
+    "pilot_session_enabled": false,
+    "protected_branch_default": false
+  },
+  "precedence": {
+    "order": [
+      "kernel",
+      "repo_flags",
+      "profile_activation",
+      "policy_registry"
+    ],
+    "deny_over_allow": true
+  },
+  "authority": {
+    "kernel_precedence": "preserved",
+    "project_overrides": "tighten_only"
+  },
+  "module_family": "scoped_change_control",
+  "historical_label": "batch1"
+}
